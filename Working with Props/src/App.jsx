@@ -104,19 +104,21 @@ export default function CardContainer() {
 
 function Card(props) {
   return (
-    <div className="card">
+    <article className="card">
       <img className="card-image" src={props.imageUrl} alt={props.title} />
       <div className="card-content">
-        <h2 className="card-title">{props.title}</h2>
+        <h3 className="card-title">{props.title}</h3>
         <p className="card-description">{props.description}</p>
-        <p className="card-date">{props.date}</p>
-        <div className="card-tags">
+        <time className="card-date">{props.date}</time>
+        <ul className="card-tags">
           {props.tags.map((tag) => (
-            <CardTag key={tag} text={tag} />
+            <li key={tag}>
+              <CardTag text={tag} />
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
-    </div>
+    </article>
   );
 }
 
