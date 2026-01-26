@@ -23,26 +23,19 @@ function Counter() {
       </p>
 
       <div className="counter-buttons">
-        <button
-          className="counter-btn counter-btn--increment"
-          onClick={increment}
-        >
+        <button className="counter-btn" onClick={increment}>
           +1
         </button>
 
         <button
-          className="counter-btn counter-btn--decrement"
+          className="counter-btn"
           onClick={decrement}
           disabled={count === 0}
         >
           -1
         </button>
 
-        <button
-          className="counter-btn counter-btn--reset"
-          onClick={reset}
-          disabled={count === 0}
-        >
+        <button className="counter-btn" onClick={reset} disabled={count === 0}>
           Reset
         </button>
       </div>
