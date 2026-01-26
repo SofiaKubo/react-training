@@ -1,38 +1,19 @@
-import { useState } from "react";
+import Counter from "./components/Counter/Counter";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
   return (
-    <>
-      {/* <span className="cross">&times;</span> */}
-      {/* <button>Начать</button> */}
+    <div className="app">
+      <header className="app-header">
+        <h1 className="app-title">Vite + React = Love</h1>
+      </header>
 
-      <h1>Vite + React = Love</h1>
+      <hr className="app-divider" />
 
-      {/* <div className="logo-container">
-        <img src="/vite.svg" className="logo" alt="Vite logo" />
-        <p>+</p>
-        <img src="/react.svg" className="logo" alt="React logo" />
-        <p>=</p>
-        <img src="/love.svg" className="logo" alt="Love logo" />
-      </div> */}
-
-      <hr />
-
-      <div className="card">
-        <p className="count-paragraph">count is {count}</p>
-        <div className="increment-buttons">
-          <button onClick={() => setCount((prev) => prev + 1)}>+1</button>
-          <button
-            onClick={() => setCount((prev) => Math.max(0, prev - 1))}
-            disabled={count === 0}
-          >
-            -1
-          </button>
-          <button onClick={() => setCount(0)}>Reset</button>
-        </div>
-      </div>
-    </>
+      <main className="app-main">
+        <Counter />
+      </main>
+    </div>
   );
 }
 
