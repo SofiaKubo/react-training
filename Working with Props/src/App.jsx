@@ -63,20 +63,21 @@ export default function CardContainer() {
   );
 }
 
-function Card(props) {
+function Card({ productObj }) {
+  if (productObj.archived) return null;
   return (
     <article className="card">
       <img
         className="card-image"
-        src={props.productObj.imageUrl}
-        alt={props.productObj.title}
+        src={productObj.imageUrl}
+        alt={productObj.title}
       />
       <div className="card-content">
-        <h3 className="card-title">{props.productObj.title}</h3>
-        <p className="card-description">{props.productObj.description}</p>
-        <time className="card-date">{props.productObj.date}</time>
+        <h3 className="card-title">{productObj.title}</h3>
+        <p className="card-description">{productObj.description}</p>
+        <time className="card-date">{productObj.date}</time>
         <ul className="card-tags">
-          {props.productObj.tags.map((tag) => (
+          {productObj.tags.map((tag) => (
             <li key={tag}>
               <CardTag text={tag} />
             </li>
