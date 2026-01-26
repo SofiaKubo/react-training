@@ -23,7 +23,12 @@ function App() {
         <p className="count-paragraph">count is {count}</p>
         <div className="increment-buttons">
           <button onClick={() => setCount((prev) => prev + 1)}>+1</button>
-          <button onClick={() => setCount((prev) => prev - 1)}>-1</button>
+          <button
+            onClick={() => setCount((prev) => Math.max(0, prev - 1))}
+            disabled={count === 0}
+          >
+            -1
+          </button>
           <button onClick={() => setCount(0)}>Reset</button>
         </div>
       </div>
